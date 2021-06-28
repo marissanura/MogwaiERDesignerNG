@@ -86,21 +86,8 @@ public final class ERDesigner {
 		theScreen.setVisible(false);
 		frame.setVisible(true);
 
-		Popup p;
-		PopupFactory pf = new PopupFactory();
-		JPanel getStartedPanel = new JPanel();
-		JLabel welcome = new JLabel("Hello Welcome To Mogwai ERDesigner!");
-		welcome.setHorizontalAlignment(JLabel.CENTER);
-		welcome.setVerticalAlignment(JLabel.CENTER);
-		welcome.setSize(400,100);
-		JButton getStarted = new JButton("Get Started");
-		JButton no = new JButton("No, Thanks");
-		getStartedPanel.add(welcome);
-		getStartedPanel.add(getStarted);
-		getStartedPanel.add(no);
-
-		p = pf.getPopup(frame, getStartedPanel, 500, 250);
-		p.show();
+		ERDesignerGettingStartedFrame gettingstartedframe = new ERDesignerGettingStartedFrame(frame);
+		gettingstartedframe.displayFrame();
 
 		if (StringUtils.isNotEmpty(theFilenameToOpen)) {
 			frame.commandOpenFile(new File(theFilenameToOpen));
